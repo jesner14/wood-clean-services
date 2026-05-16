@@ -44,7 +44,7 @@ export function History() {
             >
               <img src={r.img} alt={r.title} style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block' }} />
               <div style={{ padding: '16px 20px', background: '#fff' }}>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: '#5a2a6d', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '4px' }}>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: '#52337C', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '4px' }}>
                   {r.category}
                 </div>
                 <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a', margin: 0 }}>{r.title}</h3>
@@ -71,9 +71,9 @@ export function History() {
               et du top management.
             </p>
             <div style={{
-              background: '#f3ebf6', border: '1px solid #dcbadd', borderRadius: '12px', padding: '20px 24px'
+              background: '#F4F1F6', border: '1px solid #D4CCD9', borderRadius: '12px', padding: '20px 24px'
             }}>
-              <p style={{ fontSize: '14px', fontWeight: 700, color: '#5a2a6d', margin: '0 0 6px' }}>Notre Vision</p>
+              <p style={{ fontSize: '14px', fontWeight: 700, color: '#52337C', margin: '0 0 6px' }}>Notre Vision</p>
               <p style={{ fontSize: '14px', color: '#475569', margin: 0, lineHeight: 1.7 }}>
                 Devenir la référence en nettoyage professionnel au Sénégal et en Afrique de l'Ouest,
                 en garantissant des standards de qualité et de sécurité exceptionnels.

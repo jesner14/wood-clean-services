@@ -32,7 +32,7 @@ export function PageHero({ bg, label, title, subtitle, breadcrumbs, overlay }: P
       {/* Gradient overlay */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: overlay ?? 'linear-gradient(135deg, rgba(10,15,40,0.85) 0%, rgba(90,42,109,0.55) 100%)',
+        background: overlay ?? 'linear-gradient(135deg, rgba(10,15,40,0.85) 0%, rgba(82,51,124,0.55) 100%)',
       }} />
 
       {/* Decorative circles */}
@@ -63,7 +63,7 @@ export function PageHero({ bg, label, title, subtitle, breadcrumbs, overlay }: P
           border: '1px solid rgba(255,255,255,0.22)',
           borderRadius: '50px', padding: '5px 16px',
           fontSize: '11px', fontWeight: 700, letterSpacing: '2px',
-          color: '#dcbadd', textTransform: 'uppercase', marginBottom: '16px'
+          color: '#D4CCD9', textTransform: 'uppercase', marginBottom: '16px'
         }}>{label}</div>
 
         <h1 style={{
@@ -73,7 +73,7 @@ export function PageHero({ bg, label, title, subtitle, breadcrumbs, overlay }: P
         }}>{title}</h1>
 
         {subtitle && (
-          <p style={{ fontSize: '16px', color: '#dcbadd', margin: 0, fontWeight: 500 }}>{subtitle}</p>
+          <p style={{ fontSize: '16px', color: '#D4CCD9', margin: 0, fontWeight: 500 }}>{subtitle}</p>
         )}
       </div>
     </section>

@@ -6,42 +6,42 @@ const services = [
     number: '01',
     title: 'Nettoyage et entretien des hottes de cuisine',
     features: ['Nettoyage des hottes plafond', 'Nettoyage et évacuation', 'Nettoyage des filtres et conduits', 'Dégraissage cuisine et ventilation'],
-    color: '#5a2a6d'
+    color: '#52337C'
   },
   {
     icon: Building2,
     number: '02',
     title: 'Grand ménage des restaurants et hôtels',
     features: ['Nettoyage complet de cuisine', 'Dégraissage complet des surfaces', 'Nettoyage murs et plafonds', 'Nettoyage façades, vitres extérieures'],
-    color: '#e57b7f'
+    color: '#EB8E8C'
   },
   {
     icon: Home,
     number: '03',
     title: 'Nettoyage pour particuliers et immeubles',
     features: ['Grand ménage résidentiel', 'Nettoyage d\'immeubles et résidences', 'Nettoyage espaces communs', 'Nettoyage vitrerie et escaliers'],
-    color: '#8e5a9c'
+    color: '#785A8F'
   },
   {
     icon: Wrench,
     number: '04',
     title: 'Conception, installation et maintenance',
     features: ['Conception sur mesure', 'Systèmes de ventilation conformes aux normes', 'Maintenance préventive', 'Nettoyage extincteurs'],
-    color: '#411d51'
+    color: '#3F275F'
   },
   {
     icon: Wind,
     number: '05',
     title: 'Nettoyage chambres froides',
     features: ['Nettoyage complet frigorifique', 'Chambres froides professionnelles', 'Systèmes de réfrigération spécialisés', 'Dégivrage'],
-    color: '#5a2a6d'
+    color: '#52337C'
   },
   {
     icon: Users,
     number: '06',
     title: 'Services complémentaires',
     features: ['Jardinage et aménagement paysager', 'Fourniture d\'équipements professionnels', 'Travaux d\'entretien et rénovation', 'Désinfection, désinsectisation, dératisation'],
-    color: '#e57b7f'
+    color: '#EB8E8C'
   },
 ];
 

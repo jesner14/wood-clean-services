@@ -1,9 +1,9 @@
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 
 const contactInfo = [
-  { icon: Phone, title: 'Téléphone', detail: '+221 XX XXX XX XX', link: 'tel:+221XXXXXXXXX', color: '#5a2a6d' },
-  { icon: Mail, title: 'Email', detail: 'contact@woodclean.sn', link: 'mailto:contact@woodclean.sn', color: '#e57b7f' },
-  { icon: MapPin, title: 'Adresse', detail: 'Plateau, Dakar, Sénégal', link: '#', color: '#8e5a9c' },
+  { icon: Phone, title: 'Téléphone', detail: '+221 XX XXX XX XX', link: 'tel:+221XXXXXXXXX', color: '#52337C' },
+  { icon: Mail, title: 'Email', detail: 'contact@woodclean.sn', link: 'mailto:contact@woodclean.sn', color: '#EB8E8C' },
+  { icon: MapPin, title: 'Adresse', detail: 'Plateau, Dakar, Sénégal', link: '#', color: '#785A8F' },
   { icon: Clock, title: 'Horaires', detail: 'Lun-Sam: 8h-18h | Urgences 24/7', link: '#', color: '#10b981' },
 ];
 
@@ -18,7 +18,7 @@ export function Contact() {
             <h2 className="section-title">Prêt à Démarrer Votre Projet ?</h2>
           </div>
           <p className="section-subtitle">
-            Parlons-en ! <strong style={{ color: '#5a2a6d' }}>Devis gratuit sous 24h.</strong>
+            Parlons-en ! <strong style={{ color: '#52337C' }}>Devis gratuit sous 24h.</strong>
           </p>
         </div>
 
@@ -58,7 +58,7 @@ export function Contact() {
                   outline: 'none', transition: 'border 0.2s', background: '#fff',
                   boxSizing: 'border-box'
                 }}
-                  onFocus={e => e.currentTarget.style.borderColor = '#5a2a6d'}
+                  onFocus={e => e.currentTarget.style.borderColor = '#52337C'}
                   onBlur={e => e.currentTarget.style.borderColor = '#e2e8f0'}
                 />
               </div>
@@ -70,7 +70,7 @@ export function Contact() {
                   outline: 'none', transition: 'border 0.2s', background: '#fff',
                   boxSizing: 'border-box'
                 }}
-                  onFocus={e => e.currentTarget.style.borderColor = '#5a2a6d'}
+                  onFocus={e => e.currentTarget.style.borderColor = '#52337C'}
                   onBlur={e => e.currentTarget.style.borderColor = '#e2e8f0'}
                 />
               </div>
@@ -82,7 +82,7 @@ export function Contact() {
                   outline: 'none', transition: 'border 0.2s', background: '#fff',
                   boxSizing: 'border-box'
                 }}
-                  onFocus={e => e.currentTarget.style.borderColor = '#5a2a6d'}
+                  onFocus={e => e.currentTarget.style.borderColor = '#52337C'}
                   onBlur={e => e.currentTarget.style.borderColor = '#e2e8f0'}
                 />
               </div>
@@ -108,7 +108,7 @@ export function Contact() {
                   outline: 'none', resize: 'none', background: '#fff',
                   fontFamily: 'inherit', boxSizing: 'border-box'
                 }}
-                  onFocus={e => e.currentTarget.style.borderColor = '#5a2a6d'}
+                  onFocus={e => e.currentTarget.style.borderColor = '#52337C'}
                   onBlur={e => e.currentTarget.style.borderColor = '#e2e8f0'}
                 />
               </div>
@@ -134,7 +134,7 @@ export function Contact() {
                 <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                   <div style={{
                     width: '22px', height: '22px', borderRadius: '50%',
-                    background: '#5a2a6d', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    background: '#52337C', display: 'flex', alignItems: 'center', justifyContent: 'center',
                     flexShrink: 0, marginTop: '1px'
                   }}>
                     <span style={{ color: '#fff', fontSize: '11px', fontWeight: 700 }}>✓</span>

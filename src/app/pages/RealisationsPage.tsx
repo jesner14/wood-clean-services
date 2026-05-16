@@ -3,12 +3,12 @@ import { ArrowRight } from 'lucide-react';
 import { PageHero } from '../components/PageHero';
 
 const projects = [
-  { title: 'Grand Ménage Restaurant Plateau', category: 'Restauration', desc: 'Nettoyage complet d\'une cuisine professionnelle de 400m² au cœur de Dakar.', img: '/assets/hero3.png', color: '#5a2a6d' },
-  { title: 'Entretien Hôtel 5 Étoiles', category: 'Hôtellerie', desc: 'Maintenance mensuelle des hottes et systèmes de ventilation d\'un grand hôtel.', img: '/assets/hero4.png', color: '#e57b7f' },
-  { title: 'Cuisine Industrielle Agroalimentaire', category: 'Industrie', desc: 'Dégraissage complet et remise aux normes HACCP d\'une unité de production.', img: '/assets/hero1.png', color: '#8e5a9c' },
-  { title: 'Résidence Les Almadies', category: 'Résidentiel', desc: 'Grand ménage et nettoyage des espaces communs d\'une résidence de standing.', img: '/assets/hero2.png', color: '#411d51' },
-  { title: 'Chambres Froides Supermarché', category: 'Réfrigération', desc: 'Nettoyage et dégivrage complet de 12 chambres froides d\'un supermarché.', img: '/assets/hero4.png', color: '#5a2a6d' },
-  { title: 'Installation Système de Ventilation', category: 'Maintenance', desc: 'Conception et installation d\'un système de ventilation pour un restaurant.', img: '/assets/hero3.png', color: '#e57b7f' },
+  { title: 'Grand Ménage Restaurant Plateau', category: 'Restauration', desc: 'Nettoyage complet d\'une cuisine professionnelle de 400m² au cœur de Dakar.', img: '/assets/hero3.png', color: '#52337C' },
+  { title: 'Entretien Hôtel 5 Étoiles', category: 'Hôtellerie', desc: 'Maintenance mensuelle des hottes et systèmes de ventilation d\'un grand hôtel.', img: '/assets/hero4.png', color: '#EB8E8C' },
+  { title: 'Cuisine Industrielle Agroalimentaire', category: 'Industrie', desc: 'Dégraissage complet et remise aux normes HACCP d\'une unité de production.', img: '/assets/hero1.png', color: '#785A8F' },
+  { title: 'Résidence Les Almadies', category: 'Résidentiel', desc: 'Grand ménage et nettoyage des espaces communs d\'une résidence de standing.', img: '/assets/hero2.png', color: '#3F275F' },
+  { title: 'Chambres Froides Supermarché', category: 'Réfrigération', desc: 'Nettoyage et dégivrage complet de 12 chambres froides d\'un supermarché.', img: '/assets/hero4.png', color: '#52337C' },
+  { title: 'Installation Système de Ventilation', category: 'Maintenance', desc: 'Conception et installation d\'un système de ventilation pour un restaurant.', img: '/assets/hero3.png', color: '#EB8E8C' },
 ];
 
 export function RealisationsPage() {
@@ -55,15 +55,15 @@ export function RealisationsPage() {
       <section style={{ padding: '80px 0', background: '#fff' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 32px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }} className="story-grid">
           <div>
-            <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: '#5a2a6d', textTransform: 'uppercase', marginBottom: '12px' }}>Notre Histoire</p>
+            <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: '#52337C', textTransform: 'uppercase', marginBottom: '12px' }}>Notre Histoire</p>
             <h2 style={{ fontSize: 'clamp(28px,3.5vw,42px)', fontWeight: 900, color: '#0f172a', margin: '0 0 20px', letterSpacing: '-0.5px' }}>D'où Nous Venons</h2>
             <p style={{ color: '#475569', lineHeight: 1.9, marginBottom: '16px', fontSize: '15px' }}>Wood Clean Services est née d'un constat réel, vécu sur le terrain, au cœur même du secteur de la restauration. Son fondateur, alors étudiant en droit des affaires, travaillait comme serveur dans un restaurant situé au Plateau, à Dakar.</p>
             <p style={{ color: '#475569', lineHeight: 1.9, marginBottom: '28px', fontSize: '15px' }}>Animés par le sérieux, la rigueur et le sens du travail bien fait, ils ont rapidement su se démarquer par la qualité de leurs prestations, gagnant la confiance de la clientèle et du top management.</p>
-            <div style={{ background: '#f3ebf6', border: '1px solid #dcbadd', borderRadius: '14px', padding: '22px 26px', marginBottom: '28px' }}>
-              <p style={{ fontSize: '14px', fontWeight: 800, color: '#5a2a6d', margin: '0 0 6px' }}>Notre Vision</p>
+            <div style={{ background: '#F4F1F6', border: '1px solid #D4CCD9', borderRadius: '14px', padding: '22px 26px', marginBottom: '28px' }}>
+              <p style={{ fontSize: '14px', fontWeight: 800, color: '#52337C', margin: '0 0 6px' }}>Notre Vision</p>
               <p style={{ fontSize: '14px', color: '#475569', margin: 0, lineHeight: 1.7 }}>Devenir la référence en nettoyage professionnel au Sénégal et en Afrique de l'Ouest.</p>
             </div>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '13px 28px', background: '#5a2a6d', color: '#fff', fontWeight: 700, fontSize: '14px', borderRadius: '12px', textDecoration: 'none' }}>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '13px 28px', background: '#52337C', color: '#fff', fontWeight: 700, fontSize: '14px', borderRadius: '12px', textDecoration: 'none' }}>
               Travailler avec nous <ArrowRight size={15} />
             </Link>
           </div>

@@ -3,17 +3,17 @@ import { Shield, Award, Users, Target, Heart, Zap, Leaf, Lock, ArrowRight } from
 import { PageHero } from '../components/PageHero';
 
 const features = [
-  { icon: Shield, title: 'Conformité & Sécurité', desc: 'Respect strict des normes d\'hygiène et de sécurité en vigueur', color: '#5a2a6d' },
-  { icon: Award, title: 'Excellence', desc: 'Service de qualité supérieure et résultats garantis à chaque intervention', color: '#e57b7f' },
-  { icon: Users, title: 'Équipe Qualifiée', desc: 'Personnel formé, expérimenté et régulièrement certifié', color: '#8e5a9c' },
-  { icon: Target, title: 'Sur Mesure', desc: 'Solutions personnalisées adaptées à vos besoins spécifiques', color: '#411d51' },
+  { icon: Shield, title: 'Conformité & Sécurité', desc: 'Respect strict des normes d\'hygiène et de sécurité en vigueur', color: '#52337C' },
+  { icon: Award, title: 'Excellence', desc: 'Service de qualité supérieure et résultats garantis à chaque intervention', color: '#EB8E8C' },
+  { icon: Users, title: 'Équipe Qualifiée', desc: 'Personnel formé, expérimenté et régulièrement certifié', color: '#785A8F' },
+  { icon: Target, title: 'Sur Mesure', desc: 'Solutions personnalisées adaptées à vos besoins spécifiques', color: '#3F275F' },
 ];
 
 const values = [
-  { icon: Heart, title: 'Excellence', desc: 'Engagement total envers la qualité et la satisfaction client', color: '#5a2a6d' },
-  { icon: Zap, title: 'Réactivité', desc: 'Interventions rapides, disponibles 24/7 pour les urgences', color: '#e57b7f' },
-  { icon: Leaf, title: 'Durabilité', desc: 'Produits écologiques et méthodes responsables', color: '#8e5a9c' },
-  { icon: Lock, title: 'Sécurité', desc: 'Respect strict des normes et protocoles de sécurité', color: '#411d51' },
+  { icon: Heart, title: 'Excellence', desc: 'Engagement total envers la qualité et la satisfaction client', color: '#52337C' },
+  { icon: Zap, title: 'Réactivité', desc: 'Interventions rapides, disponibles 24/7 pour les urgences', color: '#EB8E8C' },
+  { icon: Leaf, title: 'Durabilité', desc: 'Produits écologiques et méthodes responsables', color: '#785A8F' },
+  { icon: Lock, title: 'Sécurité', desc: 'Respect strict des normes et protocoles de sécurité', color: '#3F275F' },
 ];
 
 const stats = [
@@ -38,15 +38,15 @@ export function AProposPage() {
       <section className="bg-pattern" style={{ padding: '80px 0', background: '#fff', backgroundImage: 'radial-gradient(rgba(91,44,111,0.05) 2px, transparent 2px)', backgroundSize: '30px 30px' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 32px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }} className="about-intro-grid">
           <div>
-            <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: '#5a2a6d', textTransform: 'uppercase', marginBottom: '12px' }}>Qui sommes-nous</p>
+            <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: '#52337C', textTransform: 'uppercase', marginBottom: '12px' }}>Qui sommes-nous</p>
             <h2 className="text-gradient" style={{ fontSize: 'clamp(28px,3.5vw,42px)', fontWeight: 900, margin: '0 0 20px', letterSpacing: '-0.5px' }}>Wood Clean Services</h2>
             <p style={{ color: '#475569', lineHeight: 1.9, marginBottom: '16px', fontSize: '15px' }}>
               Wood Clean Services est une entreprise sénégalaise spécialisée dans le nettoyage, l'entretien et la maintenance des cuisines professionnelles, des hottes aspirantes, des systèmes de ventilation et des espaces professionnels et résidentiels.
             </p>
             <p style={{ color: '#475569', lineHeight: 1.9, marginBottom: '28px', fontSize: '15px' }}>
-              Forte d'une approche orientée conformité, sécurité et durabilité, nous accompagnons <strong style={{ color: '#5a2a6d' }}>restaurants, hôtels, industries agroalimentaires, immeubles et particuliers</strong> dans l'amélioration de leurs conditions d'hygiène et de sécurité.
+              Forte d'une approche orientée conformité, sécurité et durabilité, nous accompagnons <strong style={{ color: '#52337C' }}>restaurants, hôtels, industries agroalimentaires, immeubles et particuliers</strong> dans l'amélioration de leurs conditions d'hygiène et de sécurité.
             </p>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '13px 28px', background: '#5a2a6d', color: '#fff', fontWeight: 700, fontSize: '14px', borderRadius: '12px', textDecoration: 'none', boxShadow: '0 4px 14px rgba(74,50,114,0.3)' }}>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '13px 28px', background: '#52337C', color: '#fff', fontWeight: 700, fontSize: '14px', borderRadius: '12px', textDecoration: 'none', boxShadow: '0 4px 14px rgba(82,51,124,0.3)' }}>
               Nous Contacter <ArrowRight size={15} />
             </Link>
           </div>
@@ -61,7 +61,7 @@ export function AProposPage() {
       <section style={{ padding: '80px 0', background: '#f8fafc' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 32px' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: '#5a2a6d', textTransform: 'uppercase', marginBottom: '12px' }}>Nos Atouts</p>
+            <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: '#52337C', textTransform: 'uppercase', marginBottom: '12px' }}>Nos Atouts</p>
             <h2 style={{ fontSize: 'clamp(26px,3.5vw,40px)', fontWeight: 900, color: '#0f172a', margin: 0 }}>Pourquoi nous choisir ?</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '20px' }} className="feat-grid">
@@ -89,7 +89,7 @@ export function AProposPage() {
       <section style={{ padding: '80px 0', background: '#fff' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 32px' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: '#5a2a6d', textTransform: 'uppercase', marginBottom: '12px' }}>Nos Valeurs</p>
+            <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '2px', color: '#52337C', textTransform: 'uppercase', marginBottom: '12px' }}>Nos Valeurs</p>
             <h2 style={{ fontSize: 'clamp(26px,3.5vw,40px)', fontWeight: 900, color: '#0f172a', margin: 0 }}>Les Principes Qui Nous Guident</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '20px', marginBottom: '60px' }} className="val-grid">
@@ -110,21 +110,21 @@ export function AProposPage() {
           `}</style>
 
           {/* Mission banner */}
-          <div style={{ background: 'linear-gradient(135deg,#1A0F2E 0%,#411d51 60%,#5a2a6d 100%)', borderRadius: '20px', padding: '48px 40px', textAlign: 'center', marginBottom: '48px' }}>
+          <div style={{ background: 'linear-gradient(135deg,#1E1228 0%,#3F275F 60%,#52337C 100%)', borderRadius: '20px', padding: '48px 40px', textAlign: 'center', marginBottom: '48px' }}>
             <h3 style={{ fontSize: '26px', fontWeight: 900, color: '#fff', margin: '0 0 14px' }}>Notre Mission</h3>
-            <p style={{ fontSize: '15px', color: '#dcbadd', maxWidth: '680px', margin: '0 auto 20px', lineHeight: 1.8 }}>
+            <p style={{ fontSize: '15px', color: '#D4CCD9', maxWidth: '680px', margin: '0 auto 20px', lineHeight: 1.8 }}>
               Garantir un environnement sain, sûr et conforme aux normes les plus strictes pour tous nos clients, en alliant expertise technique, technologies innovantes et engagement humain.
             </p>
             <div style={{ display: 'inline-block', background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '10px', padding: '12px 24px' }}>
-              <p style={{ fontWeight: 700, color: '#e57b7f', margin: 0, fontSize: '15px' }}>"Votre sécurité et votre tranquillité, notre priorité absolue"</p>
+              <p style={{ fontWeight: 700, color: '#EB8E8C', margin: 0, fontSize: '15px' }}>"Votre sécurité et votre tranquillité, notre priorité absolue"</p>
             </div>
           </div>
 
           {/* Stats */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '20px' }} className="stats2-grid">
             {stats.map((s, i) => (
-              <div key={i} style={{ background: '#f3ebf6', border: '1px solid #dcbadd', borderRadius: '16px', padding: '28px', textAlign: 'center' }}>
-                <div style={{ fontSize: '40px', fontWeight: 900, color: '#5a2a6d', lineHeight: 1 }}>{s.value}</div>
+              <div key={i} style={{ background: '#F4F1F6', border: '1px solid #D4CCD9', borderRadius: '16px', padding: '28px', textAlign: 'center' }}>
+                <div style={{ fontSize: '40px', fontWeight: 900, color: '#52337C', lineHeight: 1 }}>{s.value}</div>
                 <div style={{ fontSize: '13px', color: '#475569', marginTop: '8px', fontWeight: 600 }}>{s.label}</div>
               </div>
             ))}

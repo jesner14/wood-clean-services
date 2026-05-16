@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
-
+import { BrandLogo } from './BrandLogo';
 export function Footer() {
   return (
     <footer style={{ background: '#0f172a', color: '#fff', borderTop: '1px solid #1e293b' }}>
@@ -8,14 +8,14 @@ export function Footer() {
         <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: '40px', marginBottom: '48px' }} className="footer-grid">
           {/* Brand */}
           <div>
-            <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px', textDecoration: 'none' }}>
-              <img src="/assets/logo.png" alt="Wood Clean Services Logo" style={{ height: '40px', filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.3))' }} />
-            </Link>
+            <div style={{ marginBottom: '16px' }}>
+              <BrandLogo variant="accent" height={44} />
+            </div>
             <p style={{ fontSize: '13px', color: '#64748b', lineHeight: 1.8, margin: '0 0 20px', maxWidth: '260px' }}>Votre partenaire de confiance pour le nettoyage professionnel au Sénégal. N°1 des restaurants et hôtels propres.</p>
             <div style={{ display: 'flex', gap: '10px' }}>
               {[Facebook, Instagram, Linkedin].map((Icon, i) => (
                 <a key={i} href="#" style={{ width: '36px', height: '36px', borderRadius: '8px', background: '#1e293b', border: '1px solid #334155', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748b', transition: 'all 0.2s' }}
-                  onMouseEnter={e => { e.currentTarget.style.background = '#5a2a6d'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = '#5a2a6d'; }}
+                  onMouseEnter={e => { e.currentTarget.style.background = '#52337C'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = '#52337C'; }}
                   onMouseLeave={e => { e.currentTarget.style.background = '#1e293b'; e.currentTarget.style.color = '#64748b'; e.currentTarget.style.borderColor = '#334155'; }}>
                   <Icon size={15} />
                 </a>
@@ -27,9 +27,9 @@ export function Footer() {
           <div>
             <h4 style={{ fontSize: '13px', fontWeight: 700, color: '#e2e8f0', margin: '0 0 16px', letterSpacing: '0.5px' }}>Navigation</h4>
             <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {[['Accueil', '/'], ['À Propos', '/a-propos'], ['Services', '/services'], ['Réalisations', '/realisations'], ['Contact', '/contact']].map(([label, to]) => (
+              {[['Accueil', '/'], ['À Propos', '/a-propos'], ['Services', '/services'], ['Réalisations', '/realisations'], ['Recrutement', '/recrutement'], ['Connexion', '/connexion'], ['Contact', '/contact']].map(([label, to]) => (
                 <li key={label}><Link to={to} style={{ fontSize: '13px', color: '#64748b', textDecoration: 'none', transition: 'color 0.2s' }}
-                  onMouseEnter={e => e.currentTarget.style.color = '#e57b7f'} onMouseLeave={e => e.currentTarget.style.color = '#64748b'}>{label}</Link></li>
+                  onMouseEnter={e => e.currentTarget.style.color = '#EB8E8C'} onMouseLeave={e => e.currentTarget.style.color = '#64748b'}>{label}</Link></li>
               ))}
             </ul>
           </div>
@@ -50,7 +50,7 @@ export function Footer() {
             <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {[{ Icon: Phone, text: '+221 XX XXX XX XX' }, { Icon: Mail, text: 'contact@woodclean.sn' }, { Icon: MapPin, text: 'Plateau, Dakar, Sénégal' }].map(({ Icon, text }, i) => (
                 <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '13px', color: '#64748b' }}>
-                  <Icon size={14} color="#e57b7f" style={{ flexShrink: 0, marginTop: '2px' }} />{text}
+                  <Icon size={14} color="#EB8E8C" style={{ flexShrink: 0, marginTop: '2px' }} />{text}
                 </li>
               ))}
             </ul>

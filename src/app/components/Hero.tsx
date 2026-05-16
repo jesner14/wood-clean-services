@@ -138,7 +138,7 @@ export function Hero() {
             padding: '6px 18px',
             fontSize: '11px',
             fontWeight: 700,
-            color: '#dcbadd',
+            color: '#D4CCD9',
             letterSpacing: '2px',
             textTransform: 'uppercase',
             marginBottom: '24px',
@@ -171,7 +171,7 @@ export function Hero() {
           style={{
             fontSize: '18px',
             fontWeight: 600,
-            color: '#dcbadd',
+            color: '#D4CCD9',
             margin: '0 0 12px',
             transition: 'opacity 0.4s',
           }}
@@ -216,19 +216,19 @@ export function Hero() {
                 style={{
                   width: '34px',
                   height: '34px',
-                  background: 'rgba(90, 42, 109, 0.4)',
+                  background: 'rgba(82,51,124, 0.4)',
                   borderRadius: '8px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: '#dcbadd',
+                  color: '#D4CCD9',
                 }}
               >
                 <Icon size={16} />
               </div>
               <div>
                 <div style={{ fontSize: '12px', fontWeight: 700, color: '#fff' }}>{label}</div>
-                <div style={{ fontSize: '11px', color: '#dcbadd' }}>{sub}</div>
+                <div style={{ fontSize: '11px', color: '#D4CCD9' }}>{sub}</div>
               </div>
             </div>
           ))}
@@ -291,7 +291,7 @@ export function Hero() {
           justifyContent: 'center',
           transition: 'background 0.2s',
         }}
-        onMouseEnter={e => e.currentTarget.style.background = 'rgba(90, 42, 109, 0.8)'}
+        onMouseEnter={e => e.currentTarget.style.background = 'rgba(82,51,124, 0.8)'}
         onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.12)'}
         aria-label="Précédent"
       >
@@ -318,7 +318,7 @@ export function Hero() {
           justifyContent: 'center',
           transition: 'background 0.2s',
         }}
-        onMouseEnter={e => e.currentTarget.style.background = 'rgba(90, 42, 109, 0.8)'}
+        onMouseEnter={e => e.currentTarget.style.background = 'rgba(82,51,124, 0.8)'}
         onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,255,255,0.12)'}
         aria-label="Suivant"
       >
@@ -349,7 +349,7 @@ export function Hero() {
                 width: i === current ? '32px' : '8px',
                 height: '8px',
                 borderRadius: '4px',
-                background: i === current ? '#e57b7f' : 'rgba(255,255,255,0.35)',
+                background: i === current ? '#EB8E8C' : 'rgba(255,255,255,0.35)',
                 border: 'none',
                 cursor: 'pointer',
                 padding: 0,
@@ -368,7 +368,7 @@ export function Hero() {
           bottom: 0,
           left: 0,
           height: '3px',
-          background: '#e57b7f',
+          background: '#EB8E8C',
           zIndex: 3,
           animation: 'progress 5s linear infinite',
           animationKey: current,

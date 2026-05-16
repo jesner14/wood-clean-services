@@ -1,18 +1,20 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
 import { PageHero } from '../components/PageHero';
+import { useScrollToHash } from '../hooks/useScrollToHash';
 
 const info = [
-  { icon: Phone, title: 'Téléphone', detail: '+221 XX XXX XX XX', link: 'tel:+221XXXXXXXXX', color: '#5a2a6d' },
-  { icon: Mail, title: 'Email', detail: 'contact@woodclean.sn', link: 'mailto:contact@woodclean.sn', color: '#e57b7f' },
-  { icon: MapPin, title: 'Adresse', detail: 'Plateau, Dakar, Sénégal', link: '#', color: '#8e5a9c' },
-  { icon: Clock, title: 'Horaires', detail: 'Lun–Sam : 8h–18h\nUrgences 24/7', link: '#', color: '#411d51' },
+  { icon: Phone, title: 'Téléphone', detail: '+221 XX XXX XX XX', link: 'tel:+221XXXXXXXXX', color: '#52337C' },
+  { icon: Mail, title: 'Email', detail: 'contact@woodclean.sn', link: 'mailto:contact@woodclean.sn', color: '#EB8E8C' },
+  { icon: MapPin, title: 'Adresse', detail: 'Plateau, Dakar, Sénégal', link: '#', color: '#785A8F' },
+  { icon: Clock, title: 'Horaires', detail: 'Lun–Sam : 8h–18h\nUrgences 24/7', link: '#', color: '#3F275F' },
 ];
 
 const whyUs = ['Intervention rapide dans tout Dakar', 'Équipe certifiée et expérimentée', 'Produits professionnels et écologiques', 'Devis gratuit sous 24h', 'Garantie satisfaction 100%', 'Service client réactif 24/7'];
 
 export function ContactPage() {
   const [sent, setSent] = useState(false);
+  useScrollToHash();
 
   return (
     <>
@@ -51,14 +53,14 @@ export function ContactPage() {
       </section>
 
       {/* Form + Why */}
-      <section style={{ padding: '48px 0 80px', background: '#f8fafc' }}>
+      <section id="devis" style={{ padding: '48px 0 80px', background: '#f8fafc', scrollMarginTop: '108px' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 32px', display: 'grid', gridTemplateColumns: '3fr 2fr', gap: '32px' }} className="cform-grid">
           {/* Form */}
           <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '20px', padding: '40px', boxShadow: '0 2px 12px rgba(0,0,0,0.05)' }}>
             <h2 style={{ fontSize: '24px', fontWeight: 900, color: '#0f172a', margin: '0 0 28px' }}>Demande de Devis Gratuit</h2>
             {sent ? (
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '60px 20px', gap: '16px', textAlign: 'center' }}>
-                <CheckCircle size={60} color="#5a2a6d" />
+                <CheckCircle size={60} color="#52337C" />
                 <h3 style={{ fontSize: '22px', fontWeight: 900, color: '#0f172a', margin: 0 }}>Message envoyé !</h3>
                 <p style={{ color: '#475569', fontSize: '15px', margin: 0 }}>Nous vous répondrons sous 24h. Merci de votre confiance.</p>
               </div>
@@ -69,14 +71,14 @@ export function ContactPage() {
                     <div key={i}>
                       <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#475569', marginBottom: '6px' }}>{f.label}</label>
                       <input required type={f.type} placeholder={f.ph} style={{ width: '100%', padding: '11px 14px', borderRadius: '10px', border: '1px solid #e2e8f0', fontSize: '14px', color: '#0f172a', outline: 'none', boxSizing: 'border-box', transition: 'border 0.2s' }}
-                        onFocus={e => e.currentTarget.style.borderColor = '#5a2a6d'} onBlur={e => e.currentTarget.style.borderColor = '#e2e8f0'} />
+                        onFocus={e => e.currentTarget.style.borderColor = '#52337C'} onBlur={e => e.currentTarget.style.borderColor = '#e2e8f0'} />
                     </div>
                   ))}
                 </div>
                 <div>
                   <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#475569', marginBottom: '6px' }}>Email</label>
                   <input required type="email" placeholder="votre@email.com" style={{ width: '100%', padding: '11px 14px', borderRadius: '10px', border: '1px solid #e2e8f0', fontSize: '14px', color: '#0f172a', outline: 'none', boxSizing: 'border-box', transition: 'border 0.2s' }}
-                    onFocus={e => e.currentTarget.style.borderColor = '#5a2a6d'} onBlur={e => e.currentTarget.style.borderColor = '#e2e8f0'} />
+                    onFocus={e => e.currentTarget.style.borderColor = '#52337C'} onBlur={e => e.currentTarget.style.borderColor = '#e2e8f0'} />
                 </div>
                 <div>
                   <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#475569', marginBottom: '6px' }}>Service souhaité</label>
@@ -92,10 +94,10 @@ export function ContactPage() {
                 <div>
                   <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#475569', marginBottom: '6px' }}>Message</label>
                   <textarea required rows={5} placeholder="Décrivez votre besoin en détail..." style={{ width: '100%', padding: '11px 14px', borderRadius: '10px', border: '1px solid #e2e8f0', fontSize: '14px', color: '#0f172a', outline: 'none', resize: 'none', boxSizing: 'border-box', fontFamily: 'inherit', transition: 'border 0.2s' }}
-                    onFocus={e => e.currentTarget.style.borderColor = '#5a2a6d'} onBlur={e => e.currentTarget.style.borderColor = '#e2e8f0'} />
+                    onFocus={e => e.currentTarget.style.borderColor = '#52337C'} onBlur={e => e.currentTarget.style.borderColor = '#e2e8f0'} />
                 </div>
-                <button type="submit" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '14px', background: '#5a2a6d', color: '#fff', fontWeight: 800, fontSize: '15px', borderRadius: '12px', border: 'none', cursor: 'pointer', boxShadow: '0 4px 20px rgba(90,42,109,0.35)', transition: 'background 0.2s' }}
-                  onMouseEnter={e => e.currentTarget.style.background = '#411d51'} onMouseLeave={e => e.currentTarget.style.background = '#5a2a6d'}>
+                <button type="submit" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '14px', background: '#52337C', color: '#fff', fontWeight: 800, fontSize: '15px', borderRadius: '12px', border: 'none', cursor: 'pointer', boxShadow: '0 4px 20px rgba(82,51,124,0.35)', transition: 'background 0.2s' }}
+                  onMouseEnter={e => e.currentTarget.style.background = '#3F275F'} onMouseLeave={e => e.currentTarget.style.background = '#52337C'}>
                   <Send size={16} /> Envoyer ma demande
                 </button>
               </form>
@@ -109,7 +111,7 @@ export function ContactPage() {
               <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '13px' }}>
                 {whyUs.map((item, i) => (
                   <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                    <div style={{ width: '22px', height: '22px', borderRadius: '50%', background: '#5a2a6d', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '1px' }}>
+                    <div style={{ width: '22px', height: '22px', borderRadius: '50%', background: '#52337C', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '1px' }}>
                       <span style={{ color: '#fff', fontSize: '11px', fontWeight: 700 }}>✓</span>
                     </div>
                     <span style={{ fontSize: '14px', color: '#475569', lineHeight: 1.6 }}>{item}</span>
@@ -118,12 +120,12 @@ export function ContactPage() {
               </ul>
             </div>
 
-            <div style={{ background: 'linear-gradient(135deg,#1A0F2E 0%,#5a2a6d 100%)', borderRadius: '20px', padding: '32px', textAlign: 'center' }}>
+            <div style={{ background: 'linear-gradient(135deg,#1E1228 0%,#52337C 100%)', borderRadius: '20px', padding: '32px', textAlign: 'center' }}>
               <div style={{ fontSize: '40px', fontWeight: 900, color: '#fff', lineHeight: 1 }}>24h</div>
-              <div style={{ fontSize: '14px', color: '#dcbadd', marginTop: '8px', fontWeight: 600 }}>Délai de réponse garanti</div>
+              <div style={{ fontSize: '14px', color: '#D4CCD9', marginTop: '8px', fontWeight: 600 }}>Délai de réponse garanti</div>
               <div style={{ marginTop: '20px', height: '1px', background: 'rgba(255,255,255,0.15)' }} />
               <div style={{ fontSize: '36px', fontWeight: 900, color: '#fff', lineHeight: 1, marginTop: '20px' }}>100%</div>
-              <div style={{ fontSize: '14px', color: '#dcbadd', marginTop: '8px', fontWeight: 600 }}>Satisfaction garantie</div>
+              <div style={{ fontSize: '14px', color: '#D4CCD9', marginTop: '8px', fontWeight: 600 }}>Satisfaction garantie</div>
             </div>
           </div>
         </div>

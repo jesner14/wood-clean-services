@@ -5,25 +5,25 @@ const values = [
     icon: Heart,
     title: 'Excellence',
     description: 'Engagement total envers la qualité et la satisfaction client',
-    color: '#5a2a6d'
+    color: '#52337C'
   },
   {
     icon: Zap,
     title: 'Réactivité',
     description: 'Interventions rapides et efficaces, disponibles 24/7',
-    color: '#e57b7f'
+    color: '#EB8E8C'
   },
   {
     icon: Leaf,
     title: 'Durabilité',
     description: 'Utilisation de produits écologiques et méthodes responsables',
-    color: '#8e5a9c'
+    color: '#785A8F'
   },
   {
     icon: Lock,
     title: 'Sécurité',
     description: 'Respect strict des normes et protocoles de sécurité',
-    color: '#411d51'
+    color: '#3F275F'
   },
 ];
 
@@ -69,11 +69,11 @@ export function Values() {
 
         {/* Mission Statement */}
         <div style={{
-          background: 'linear-gradient(135deg, #1A0F2E 0%, #411d51 60%, #5a2a6d 100%)',
+          background: 'linear-gradient(135deg, #1E1228 0%, #3F275F 60%, #52337C 100%)',
           borderRadius: '20px', padding: '48px 40px', textAlign: 'center', marginBottom: '60px'
         }}>
           <h3 style={{ fontSize: '26px', fontWeight: 800, color: '#fff', margin: '0 0 16px' }}>Notre Mission</h3>
-          <p style={{ fontSize: '15px', color: '#dcbadd', maxWidth: '700px', margin: '0 auto 20px', lineHeight: 1.8 }}>
+          <p style={{ fontSize: '15px', color: '#D4CCD9', maxWidth: '700px', margin: '0 auto 20px', lineHeight: 1.8 }}>
             Garantir un environnement sain, sûr et conforme aux normes les plus strictes pour tous nos clients,
             en alliant expertise technique, technologies innovantes et engagement humain.
           </p>
@@ -82,7 +82,7 @@ export function Values() {
             background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.2)',
             borderRadius: '10px', padding: '12px 24px'
           }}>
-            <p style={{ fontWeight: 700, color: '#e57b7f', margin: 0, fontSize: '15px' }}>
+            <p style={{ fontWeight: 700, color: '#EB8E8C', margin: 0, fontSize: '15px' }}>
               "Votre sécurité et votre tranquillité, notre priorité absolue"
             </p>
           </div>
@@ -96,12 +96,12 @@ export function Values() {
               <div key={i} className="card" style={{ textAlign: 'center' }}>
                 <div style={{
                   width: '48px', height: '48px', borderRadius: '12px',
-                  background: '#f3ebf6', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  background: '#F4F1F6', display: 'flex', alignItems: 'center', justifyContent: 'center',
                   margin: '0 auto 12px'
                 }}>
-                  <Icon size={20} color="#5a2a6d" />
+                  <Icon size={20} color="#52337C" />
                 </div>
-                <div style={{ fontSize: '32px', fontWeight: 900, color: '#5a2a6d', lineHeight: 1 }}>{s.value}</div>
+                <div style={{ fontSize: '32px', fontWeight: 900, color: '#52337C', lineHeight: 1 }}>{s.value}</div>
                 <div style={{ fontSize: '13px', color: '#64748b', marginTop: '6px' }}>{s.label}</div>
               </div>
             );

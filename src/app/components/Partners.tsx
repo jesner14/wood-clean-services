@@ -5,19 +5,19 @@ const quickServices = [
     icon: Utensils,
     title: 'Nettoyage Hottes & Cuisines',
     desc: 'Nettoyage professionnel des hottes, filtres et systèmes de ventilation',
-    color: '#5a2a6d'
+    color: '#52337C'
   },
   {
     icon: Building2,
     title: 'Restaurants & Hôtels',
     desc: 'Grand ménage complet pour établissements de restauration et hôtellerie',
-    color: '#e57b7f'
+    color: '#EB8E8C'
   },
   {
     icon: Home,
     title: 'Particuliers & Immeubles',
     desc: 'Solutions de nettoyage pour résidences, immeubles et espaces communs',
-    color: '#8e5a9c'
+    color: '#785A8F'
   },
 ];
 
@@ -59,7 +59,7 @@ export function Partners() {
                 background: '#fff', letterSpacing: '0.5px',
                 transition: 'all 0.2s'
               }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = '#5a2a6d'; e.currentTarget.style.color = '#5a2a6d'; }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = '#52337C'; e.currentTarget.style.color = '#52337C'; }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = '#e2e8f0'; e.currentTarget.style.color = '#64748b'; }}
               >
                 {name}

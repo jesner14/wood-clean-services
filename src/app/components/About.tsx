@@ -5,25 +5,25 @@ const features = [
     icon: Shield,
     title: 'Conformité & Sécurité',
     description: 'Respect strict des normes d\'hygiène et de sécurité en vigueur',
-    color: '#5a2a6d'
+    color: '#52337C'
   },
   {
     icon: Award,
     title: 'Excellence',
     description: 'Service de qualité supérieure et résultats garantis à chaque intervention',
-    color: '#e57b7f'
+    color: '#EB8E8C'
   },
   {
     icon: Users,
     title: 'Équipe Qualifiée',
     description: 'Personnel formé, expérimenté et régulièrement certifié',
-    color: '#8e5a9c'
+    color: '#785A8F'
   },
   {
     icon: Target,
     title: 'Sur Mesure',
     description: 'Solutions personnalisées adaptées à vos besoins spécifiques',
-    color: '#411d51'
+    color: '#3F275F'
   },
 ];
 
@@ -64,12 +64,12 @@ export function About() {
         </div>
 
         <div style={{
-          marginTop: '40px', background: '#f3ebf6', border: '1px solid #dcbadd',
+          marginTop: '40px', background: '#F4F1F6', border: '1px solid #D4CCD9',
           borderRadius: '16px', padding: '36px 40px', textAlign: 'center'
         }}>
           <p style={{ fontSize: '15px', color: '#475569', maxWidth: '800px', margin: '0 auto', lineHeight: 1.8 }}>
             Forte d'une approche orientée conformité, sécurité et durabilité, nous accompagnons{' '}
-            <strong style={{ color: '#5a2a6d' }}>restaurants, hôtels, industries agroalimentaires, immeubles et particuliers</strong>{' '}
+            <strong style={{ color: '#52337C' }}>restaurants, hôtels, industries agroalimentaires, immeubles et particuliers</strong>{' '}
             dans l'amélioration de leurs conditions d'hygiène et de sécurité.
           </p>
         </div>

@@ -5,16 +5,18 @@
 
 /* ===== DESIGN SYSTEM — Wood Clean Services Brand Colors ===== */
 :root {
-  /* Brand Colors */
-  --primary: #5a2a6d;         /* Violet d'entreprise — couleur principale */
-  --primary-dark: #411d51;    /* Violet foncé — hover */
-  --primary-light: #8e5a9c;   /* Violet clair — éléments secondaires */
-  --primary-pale: #f3ebf6;    /* Violet très clair — fonds de cartes */
-  --primary-border: #dcbadd;  /* Violet bordure */
-  --accent: #e57b7f;          /* Saumon corail — accent ponctuel */
-  --accent-light: #fbe4e5;    /* Saumon très clair */
-  --dark: #1A0F2E;            /* Fond sombre */
-  --dark-2: #2D1F4A;          /* Fond sombre secondaire */
+  /* Charte graphique — Logo Wood Clean.pdf */
+  --primary: #52337C;
+  --primary-dark: #3F275F;
+  --primary-medium: #785A8F;
+  --primary-light: #AA9FAF;
+  --primary-pale: #F4F1F6;
+  --primary-border: #D4CCD9;
+  --accent: #EB8E8C;
+  --accent-dark: #D97A78;
+  --accent-light: #FBEAE9;
+  --dark: #1E1228;
+  --dark-2: #2D1F3D;
   --text: #1e293b;
   --text-muted: #64748b;
   --bg: #ffffff;
@@ -24,7 +26,7 @@
   --radius: 12px;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
   --shadow-md: 0 4px 16px rgba(0,0,0,0.10);
-  --shadow-lg: 0 8px 40px rgba(74,50,114,0.14);
+  --shadow-lg: 0 8px 40px rgba(82,51,124,0.14);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -33,11 +35,16 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-family: var(--font-body);
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
 }
 
 img { max-width: 100%; display: block; }
@@ -80,7 +87,15 @@ a { text-decoration: none; color: inherit; }
 }
 
 .glow-shadow {
-  box-shadow: 0 10px 30px rgba(90, 42, 109, 0.15);
+  box-shadow: 0 10px 30px rgba(82,51,124, 0.15);
+}
+
+.card-elevated {
+  box-shadow: 0 8px 32px rgba(82,51,124, 0.12), 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.card-elevated:hover {
+  box-shadow: 0 12px 40px rgba(82,51,124, 0.16), 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .section-title {
@@ -106,12 +121,12 @@ a { text-decoration: none; color: inherit; }
   border: none;
   cursor: pointer;
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 14px rgba(74,50,114,0.30);
+  box-shadow: 0 4px 14px rgba(82,51,124,0.30);
 }
 .btn-primary:hover {
   background: var(--primary-dark);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(74,50,114,0.40);
+  box-shadow: 0 6px 20px rgba(82,51,124,0.40);
 }
 
 .btn-outline {
