@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "create-user": "node scripts/create-test-user.mjs",
+    "reset-password": "node scripts/reset-password.mjs",
+    "set-security-answers": "node scripts/set-security-answers.mjs"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
@@ -39,6 +42,8 @@
     "@radix-ui/react-toggle": "1.1.2",
     "@radix-ui/react-toggle-group": "1.1.2",
     "@radix-ui/react-tooltip": "1.1.8",
+    "@supabase/supabase-js": "^2.106.1",
+    "bcryptjs": "^3.0.3",
     "canvas-confetti": "1.9.4",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
@@ -67,6 +72,7 @@
   "devDependencies": {
     "@imgly/background-removal-node": "^1.4.5",
     "@tailwindcss/vite": "4.1.12",
+    "@types/bcryptjs": "^3.0.0",
     "@vitejs/plugin-react": "4.7.0",
     "jimp": "^1.6.1",
     "sharp": "^0.34.5",

@@ -1,16 +1,54 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router';
 import { PageHero } from '../components/PageHero';
 import { LogIn, Mail, Lock, Shield, FileText, Calendar, MessageSquare, Bell, Download, Phone } from 'lucide-react';
+import { useAuth } from '../../contexts/AuthContext';
 
 export function ConnexionPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const { signIn, user, profile, loading } = useAuth();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const locationState = location.state as { from?: string; message?: string } | null;
+  const from = locationState?.from;
+  const successMessage = locationState?.message;
+
+  useEffect(() => {
+    if (!loading && user && profile) {
+      const dest =
+        from && from !== '/connexion' && from !== '/inscription'
+          ? from
+          : profile.role === 'admin'
+            ? '/admin'
+            : '/espace-client';
+      navigate(dest, { replace: true });
+    }
+  }, [loading, user, profile, navigate, from]);
+
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) navigate('/espace-client');
+    setError(null);
+    setSubmitting(true);
+    try {
+      const { error: signInError, role } = await signIn(email.trim(), password);
+      if (signInError) {
+        setError(signInError);
+        return;
+      }
+      const dest =
+        from && from !== '/connexion' && from !== '/inscription'
+          ? from
+          : role === 'admin'
+            ? '/admin'
+            : '/espace-client';
+      navigate(dest, { replace: true });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -47,6 +85,37 @@ export function ConnexionPage() {
                 </div>
               </div>
 
+              {successMessage && (
+                <p
+                  style={{
+                    padding: '12px 16px',
+                    background: '#f0fdf4',
+                    color: '#166534',
+                    borderRadius: '10px',
+                    fontSize: '14px',
+                    marginBottom: '20px',
+                  }}
+                >
+                  {successMessage}
+                </p>
+              )}
+
+              {error && (
+                <p
+                  role="alert"
+                  style={{
+                    padding: '12px 16px',
+                    background: '#fef2f2',
+                    color: '#b91c1c',
+                    borderRadius: '10px',
+                    fontSize: '14px',
+                    marginBottom: '20px',
+                  }}
+                >
+                  {error}
+                </p>
+              )}
+
               <form onSubmit={handleLogin}>
                 <label style={labelStyle}>
                   <Mail size={14} style={{ marginRight: '6px', verticalAlign: 'middle' }} />
@@ -66,35 +135,45 @@ export function ConnexionPage() {
                   <input
                     type="password"
                     required
+                    autoComplete="current-password"
                     style={inputStyle}
                     placeholder="••••••••"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </label>
+                <p style={{ textAlign: 'right', margin: '-8px 0 20px' }}>
+                  <Link
+                    to="/mot-de-passe-oublie"
+                    style={{ fontSize: '13px', color: '#52337C', fontWeight: 600, textDecoration: 'none' }}
+                  >
+                    Mot de passe oublié ?
+                  </Link>
+                </p>
                 <button
                   type="submit"
+                  disabled={submitting}
                   style={{
                     width: '100%',
                     padding: '16px',
-                    background: '#52337C',
+                    background: submitting ? '#94a3b8' : '#52337C',
                     color: '#fff',
                     border: 'none',
                     borderRadius: '12px',
                     fontWeight: 700,
                     fontSize: '16px',
-                    cursor: 'pointer',
+                    cursor: submitting ? 'not-allowed' : 'pointer',
                     boxShadow: '0 4px 20px rgba(82,51,124,0.35)',
                   }}
                 >
-                  Se connecter
+                  {submitting ? 'Connexion…' : 'Se connecter'}
                 </button>
               </form>
 
               <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '14px', color: '#64748b' }}>
-                Vous cherchez du travail ?{' '}
-                <Link to="/recrutement" style={{ color: '#52337C', fontWeight: 700 }}>
-                  Inscrivez-vous ici
+                Pas encore de compte partenaire ?{' '}
+                <Link to="/inscription" style={{ color: '#52337C', fontWeight: 700 }}>
+                  Créer un compte
                 </Link>
               </p>
             </div>

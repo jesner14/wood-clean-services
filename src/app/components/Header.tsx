@@ -27,7 +27,9 @@ export function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const { pathname } = useLocation();
 
-  const transparent = !scrolled;
+  const isAppArea =
+    pathname.startsWith('/espace-client') || pathname.startsWith('/admin');
+  const transparent = !scrolled && !isAppArea;
   const isEtablissement = pathname.startsWith('/etablissements');
 
   useEffect(() => {
