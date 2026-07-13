@@ -27,11 +27,28 @@
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
   --shadow-md: 0 4px 16px rgba(0,0,0,0.10);
   --shadow-lg: 0 8px 40px rgba(82,51,124,0.14);
-  /* Rails de contenu — évite l'étirement sur ultra-wide */
+  /* Rails de contenu — largeur proche d’un écran laptop/desktop standard, puis scale */
   --content-max: 1280px;
   --header-max: 1280px;
-  --hero-max: 1400px;
-  --page-pad: clamp(16px, 3vw, 32px);
+  --hero-max: min(1680px, 96vw);
+  --page-pad: clamp(16px, 2.5vw, 48px);
+}
+
+@media (min-width: 1536px) {
+  :root {
+    --content-max: 1440px;
+    --header-max: 1440px;
+    --hero-max: min(1840px, 96vw);
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --content-max: 1600px;
+    --header-max: 1600px;
+    --hero-max: min(2000px, 94vw);
+    --page-pad: clamp(24px, 3vw, 56px);
+  }
 }
 
 *, *::before, *::after { box-sizing: border-box; }

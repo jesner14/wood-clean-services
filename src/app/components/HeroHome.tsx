@@ -159,7 +159,7 @@ export function HeroHome() {
         }
 
         .hero-home__left {
-          max-width: 480px;
+          max-width: min(520px, 100%);
           align-self: start;
           padding-top: 0;
         }
@@ -176,7 +176,7 @@ export function HeroHome() {
         }
 
         .hero-home__title {
-          font-size: clamp(26px, 3.2vw, 42px);
+          font-size: clamp(28px, 2.4vw, 46px);
           font-weight: 900;
           color: #fff;
           line-height: 1.15;
@@ -187,11 +187,11 @@ export function HeroHome() {
         }
 
         .hero-home__subtitle {
-          font-size: clamp(14px, 1.5vw, 17px);
+          font-size: clamp(15px, 1.1vw, 18px);
           color: rgba(255, 255, 255, 0.9);
           line-height: 1.7;
           margin: 0 0 28px;
-          max-width: 420px;
+          max-width: 460px;
           text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
         }
 
@@ -239,7 +239,7 @@ export function HeroHome() {
           align-self: start;
           z-index: 3;
           margin-top: 0;
-          transform: translateX(-36px);
+          transform: translateX(-28px);
         }
 
         .hero-home__worker-wrap {
@@ -253,14 +253,13 @@ export function HeroHome() {
         }
 
         .hero-home__worker {
-          max-height: min(560px, 62vh);
+          max-height: min(680px, 74vh);
           width: auto;
-          max-width: 100%;
+          max-width: min(420px, 34vw);
           object-fit: contain;
           object-position: top center;
           vertical-align: top;
           display: block;
-          /* Ombre douce — idéal quand hero-worker.png aura un fond transparent */
           filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.35));
         }
 
@@ -275,8 +274,8 @@ export function HeroHome() {
         .hero-home__services-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 10px;
-          max-width: 440px;
+          gap: 12px;
+          max-width: min(520px, 100%);
           width: 100%;
         }
 
@@ -380,22 +379,49 @@ export function HeroHome() {
           }
         }
 
-        /* Desktop large : garde les proportions sans étirer */
-        @media (min-width: 1440px) {
+        /* Grands écrans : proportions proches d’un desktop 15–17" plein cadre */
+        @media (min-width: 1536px) {
+          .hero-home__left {
+            max-width: 560px;
+          }
           .hero-home__worker {
-            max-height: min(600px, 64vh);
+            max-height: min(760px, 78vh);
+            max-width: min(480px, 28vw);
+          }
+          .hero-home__services-grid {
+            max-width: 560px;
+            gap: 14px;
+          }
+          .hero-home__service-card {
+            padding: 14px 16px;
+          }
+          .hero-home__service-title {
+            font-size: 13px;
+          }
+          .hero-home__center {
+            transform: translateX(-40px);
           }
         }
 
         @media (min-width: 1920px) {
           .hero-home__bg img {
-            object-position: 52% center;
+            object-position: 55% center;
           }
-          .hero-home__center {
-            transform: translateX(-28px);
+          .hero-home__left {
+            max-width: 600px;
           }
           .hero-home__worker {
-            max-height: min(640px, 66vh);
+            max-height: min(820px, 80vh);
+            max-width: min(520px, 26vw);
+          }
+          .hero-home__services-grid {
+            max-width: 600px;
+          }
+          .hero-home__center {
+            transform: translateX(-48px);
+          }
+          .hero-home__feature {
+            font-size: 15px;
           }
         }
 
@@ -410,7 +436,8 @@ export function HeroHome() {
             max-width: 380px;
           }
           .hero-home__worker {
-            max-height: min(480px, 55vh);
+            max-height: min(520px, 58vh);
+            max-width: min(340px, 32vw);
           }
           .hero-home__center {
             transform: translateX(-20px);
@@ -451,6 +478,7 @@ export function HeroHome() {
           }
           .hero-home__worker {
             max-height: min(420px, 50vh);
+            max-width: min(300px, 55vw);
           }
         }
 

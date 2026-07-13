@@ -170,6 +170,17 @@ export function PartnerSlider() {
           background: linear-gradient(to left, rgba(232,234,237,0.95), transparent);
         }
 
+        @media (min-width: 1536px) {
+          .partner-logo-card {
+            width: 230px;
+            padding: 18px 16px 16px;
+          }
+          .partner-logo-badge {
+            width: 92px;
+            height: 92px;
+          }
+        }
+
         @media (prefers-reduced-motion: reduce) {
           .partner-marquee-track {
             animation: none !important;

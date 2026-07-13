@@ -199,7 +199,7 @@ export function FlyerBanner() {
         .flyer-banner-viewport {
           position: relative;
           width: 100%;
-          max-width: min(1920px, 100%);
+          max-width: min(var(--content-max, 1280px), 100%);
           margin: 0 auto;
           padding: 0 var(--page-pad, 32px);
           box-sizing: border-box;
@@ -216,28 +216,30 @@ export function FlyerBanner() {
           width: 100%;
           aspect-ratio: ${FLYER_BANNER_SPECS.ratio};
           max-height: none;
-          min-height: 200px;
+          min-height: 220px;
           overflow: hidden;
-          border-radius: 0;
+          border-radius: 16px;
           background: linear-gradient(135deg, ${brand.dark} 0%, ${brand.primaryDark} 45%, ${brand.primary} 100%);
           box-shadow:
             inset 0 0 0 1px rgba(255,255,255,0.08),
             0 20px 60px rgba(30, 18, 40, 0.22);
         }
 
-        @media (min-width: 1280px) {
-          .flyer-banner-frame {
-            border-radius: 16px;
+        @media (min-width: 1536px) {
+          .flyer-banner-viewport {
+            max-width: min(var(--content-max, 1440px), 100%);
           }
         }
 
         @media (max-width: 768px) {
           .flyer-banner-viewport {
             padding: 0;
+            max-width: 100%;
           }
           .flyer-banner-frame {
             min-height: 180px;
             aspect-ratio: 16 / 9;
+            border-radius: 0;
           }
         }
 
