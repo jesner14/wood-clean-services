@@ -1,4 +1,15 @@
-import { Utensils, Building2, Home, Wrench, Wind, Users, LucideIcon } from 'lucide-react';
+import {
+  Utensils,
+  Hammer,
+  Wrench,
+  ChefHat,
+  Users,
+  Sofa,
+  Layers,
+  Snowflake,
+  Home,
+  type LucideIcon,
+} from 'lucide-react';
 
 export interface ServiceItem {
   icon: LucideIcon;
@@ -9,167 +20,277 @@ export interface ServiceItem {
   sections: { title: string; description: string; why?: string }[];
 }
 
+/** Services du trifold Wood Clean Services 2026 — 9 offres */
 export const servicesContent: ServiceItem[] = [
   {
     icon: Utensils,
     number: '01',
-    title: 'Nettoyage des hottes de cuisine professionnelles',
+    title: 'Nettoyage de hottes de cuisine',
     tagline: 'Protégez votre établissement contre les incendies et les risques sanitaires',
     color: '#52337C',
     sections: [
       {
-        title: 'Nettoyage des hottes',
-        description: 'Nous éliminons en profondeur les graisses accumulées dans vos hottes.',
-        why: 'Les dépôts de graisse sont hautement inflammables. Un simple incident peut provoquer un incendie. Un entretien régulier protège votre personnel, vos clients et votre investissement.',
+        title: 'Dégraissage complet',
+        description: 'Élimination en profondeur des graisses accumulées dans vos hottes.',
+        why: 'Les dépôts de graisse sont hautement inflammables. Un entretien régulier protège votre personnel, vos clients et votre investissement.',
       },
       {
-        title: 'Nettoyage des filtres et conduits',
-        description: 'Les filtres capturent les graisses, et les conduits évacuent l\'air vers l\'extérieur.',
-        why: 'Des filtres encrassés réduisent l\'aspiration, augmentent vos coûts énergétiques et favorisent les mauvaises odeurs. Des conduits sales peuvent bloquer la ventilation et devenir un danger invisible.',
+        title: 'Nettoyage des filtres',
+        description: 'Nettoyage et remise en état des filtres pour une aspiration optimale.',
+        why: 'Des filtres encrassés réduisent l\'aspiration, augmentent vos coûts énergétiques et favorisent les mauvaises odeurs.',
       },
       {
-        title: 'Dégraissage des sorties de ventilation',
-        description: 'Nous assurons un nettoyage complet des sorties d\'air.',
-        why: 'Une meilleure circulation de l\'air, moins de chaleur, et un environnement de travail plus sain et plus confortable.',
+        title: 'Nettoyage des conduits',
+        description: 'Intervention complète sur les conduits d\'évacuation d\'air.',
+        why: 'Des conduits sales peuvent bloquer la ventilation et devenir un danger invisible.',
+      },
+      {
+        title: 'Entretien des systèmes d\'extraction',
+        description: 'Contrôle et entretien de l\'ensemble du système d\'extraction.',
+        why: 'Une meilleure circulation de l\'air et un environnement de travail plus sain.',
       },
     ],
   },
   {
-    icon: Building2,
+    icon: Hammer,
     number: '02',
-    title: 'Grand ménage des restaurants et hôtels',
-    tagline: 'Offrez à vos clients une propreté irréprochable et une image haut de gamme',
+    title: 'Conception & Installation',
+    tagline: 'Des installations performantes, conformes et durables',
     color: '#EB8E8C',
     sections: [
       {
-        title: 'Nettoyage des équipements et installations de cuisine',
-        description: 'Nous nettoyons et dégraissons tous vos équipements en profondeur.',
-        why: 'Vous garantissez une qualité alimentaire irréprochable et évitez toute contamination.',
+        title: 'Hottes sur mesure',
+        description: 'Conception et fabrication de hottes adaptées à votre cuisine.',
+        why: 'Une solution parfaitement dimensionnée pour votre établissement.',
       },
       {
-        title: 'Nettoyage complet de cuisine',
-        description: 'Nous intervenons dans chaque recoin, même les zones invisibles.',
-        why: 'Une cuisine saine, conforme aux normes, prête pour les inspections.',
+        title: 'Réseaux d\'extraction',
+        description: 'Installation complète des réseaux d\'extraction d\'air.',
+        why: 'Performance maximale et conformité aux normes de sécurité.',
       },
       {
-        title: 'Dégraissage des plans de travail',
-        description: 'Des surfaces propres et désinfectées pour la préparation des aliments.',
-        why: 'Éviter les contaminations croisées et protéger la santé de vos clients.',
+        title: 'Ventilation professionnelle',
+        description: 'Mise en place de systèmes de ventilation pour cuisines pro.',
+        why: 'Un air plus sain pour votre équipe et vos clients.',
       },
       {
-        title: 'Nettoyage des murs, sols et plafonds avec désinfection',
-        description: 'Nous éliminons graisses, bactéries et salissures.',
-        why: 'Un environnement propre, sain et conforme aux exigences sanitaires.',
-      },
-      {
-        title: 'Nettoyage des façades et vitres',
-        description: 'Votre image commence à l\'extérieur.',
-        why: 'Une façade propre attire plus de clients et inspire confiance dès le premier regard.',
-      },
-    ],
-  },
-  {
-    icon: Home,
-    number: '03',
-    title: 'Nettoyage pour particuliers et immeubles',
-    tagline: 'Un cadre de vie propre, sain et agréable au quotidien',
-    color: '#785A8F',
-    sections: [
-      {
-        title: 'Grand ménage de résidence',
-        description: 'Un nettoyage en profondeur de votre habitation.',
-        why: 'Élimination des poussières, bactéries et allergènes pour un air plus sain.',
-      },
-      {
-        title: 'Nettoyage d\'immeubles',
-        description: 'Entretien complet des bâtiments.',
-        why: 'Valorisation de votre bien immobilier et satisfaction des occupants.',
-      },
-      {
-        title: 'Nettoyage des espaces communs',
-        description: 'Zones à forte circulation nécessitant une attention particulière.',
-        why: 'Réduire la propagation des microbes et maintenir un environnement propre.',
-      },
-      {
-        title: 'Nettoyage de vitrerie et escaliers',
-        description: 'Clarté, propreté et sécurité.',
-        why: 'Plus de lumière naturelle et moins de risques d\'accidents.',
+        title: 'Mise aux normes',
+        description: 'Adaptation de vos installations aux standards en vigueur.',
+        why: 'Éviter les sanctions et garantir la sécurité de tous.',
       },
     ],
   },
   {
     icon: Wrench,
-    number: '04',
-    title: 'Conception, installation et maintenance',
-    tagline: 'Des installations performantes, conformes et durables',
-    color: '#3F275F',
+    number: '03',
+    title: 'Maintenance Technique',
+    tagline: 'Montage, réparation et maintenance préventive',
+    color: '#785A8F',
     sections: [
       {
-        title: 'Conception sur mesure',
-        description: 'Des solutions adaptées à vos besoins réels.',
-        why: 'Performance maximale et investissement rentable.',
+        title: 'Montage & démontage',
+        description: 'Intervention technique pour monter ou démonter vos équipements.',
       },
       {
-        title: 'Systèmes de ventilation aux normes',
-        description: 'Installation conforme aux standards de sécurité.',
-        why: 'Éviter les sanctions et garantir la sécurité de tous.',
+        title: 'Réparation de tourelles',
+        description: 'Dépannage et réparation des tourelles d\'extraction.',
+      },
+      {
+        title: 'Contrôle des installations',
+        description: 'Vérification complète du bon fonctionnement de vos équipements.',
       },
       {
         title: 'Maintenance préventive',
-        description: 'Nous anticipons les problèmes avant qu\'ils n\'arrivent.',
+        description: 'Anticipation des pannes avant qu\'elles n\'arrivent.',
         why: 'Moins de pannes, moins de coûts, plus de tranquillité.',
-      },
-      {
-        title: 'Nettoyage des extincteurs',
-        description: 'Vérification et entretien de vos dispositifs de sécurité.',
-        why: 'Être prêt à agir immédiatement en cas d\'incendie.',
       },
     ],
   },
   {
-    icon: Wind,
-    number: '05',
-    title: 'Nettoyage des chambres froides et équipements frigorifiques',
-    tagline: 'Garantissez la sécurité alimentaire et le respect de la chaîne du froid',
-    color: '#52337C',
+    icon: ChefHat,
+    number: '04',
+    title: 'Grand ménage de cuisine',
+    tagline: 'Pour hôtels et restaurants — une propreté irréprochable',
+    color: '#3F275F',
     sections: [
       {
-        title: 'Nettoyage des frigos et congélateurs avec désinfection',
-        description: 'Nettoyage en profondeur pour éliminer bactéries et odeurs.',
-        why: 'Une meilleure conservation des aliments et zéro contamination.',
+        title: 'Sols et carrelages',
+        description: 'Nettoyage en profondeur des sols et carrelages de cuisine.',
       },
       {
-        title: 'Nettoyage des chambres froides professionnelles',
-        description: 'Traitement complet des espaces de stockage.',
-        why: 'Conformité sanitaire et sécurité alimentaire garantie.',
+        title: 'Murs et plafonds',
+        description: 'Élimination des graisses et salissures sur murs et plafonds.',
       },
       {
-        title: 'Nettoyage des containers frigorifiques (Reefer)',
-        description: 'Entretien spécialisé pour le transport frigorifique.',
-        why: 'Assurer la qualité des produits du départ à la livraison.',
+        title: 'Plans de travail',
+        description: 'Dégraissage et désinfection des surfaces de préparation.',
+        why: 'Éviter les contaminations croisées et protéger la santé de vos clients.',
+      },
+      {
+        title: 'Équipements de cuisine',
+        description: 'Nettoyage et dégraissage de tous vos équipements.',
+      },
+      {
+        title: 'Chambres froides & zones plonge',
+        description: 'Entretien des espaces de stockage et de lavage.',
+      },
+      {
+        title: 'Désinfection professionnelle',
+        description: 'Traitement antiseptique complet après dégraissage intensif.',
+        why: 'Un environnement conforme aux exigences sanitaires.',
       },
     ],
   },
   {
     icon: Users,
+    number: '05',
+    title: 'Agents & Dames de ménage permanents',
+    tagline: 'Personnel qualifié à disposition',
+    color: '#52337C',
+    sections: [
+      {
+        title: 'Agents d\'entretien',
+        description: 'Mise à disposition d\'agents formés pour l\'entretien courant.',
+      },
+      {
+        title: 'Dames de ménage',
+        description: 'Personnel expérimenté pour le nettoyage domestique et professionnel.',
+      },
+      {
+        title: 'Gouvernantes',
+        description: 'Supervision et organisation de l\'entretien de vos espaces.',
+      },
+      {
+        title: 'Agents polyvalents',
+        description: 'Profils flexibles adaptés à plusieurs types de missions.',
+      },
+      {
+        title: 'Remplacement temporaire ou permanent',
+        description: 'Solutions ponctuelles ou contrats de mise à disposition longue durée.',
+        why: 'Suivi qualité et encadrement professionnel garantis.',
+      },
+    ],
+  },
+  {
+    icon: Sofa,
     number: '06',
-    title: 'Services complémentaires',
-    tagline: 'Une solution complète pour tous vos besoins',
+    title: 'Nettoyage de canapés',
+    tagline: 'Nettoyage en profondeur — tissus et cuir',
     color: '#EB8E8C',
     sections: [
-      { title: 'Nettoyage de canapés et tapis', description: 'Redonnez vie à vos tissus et éliminez acariens et bactéries.' },
-      { title: 'Travaux de peinture', description: 'Embellissez et protégez vos espaces.' },
-      { title: 'Jardinage et aménagement paysager', description: 'Valorisez vos extérieurs avec des espaces verts soignés.' },
-      { title: 'Soudure sous-marine', description: 'Intervention technique spécialisée pour structures immergées.' },
-      { title: 'Nettoyage après construction', description: 'Un espace propre, prêt à être utilisé immédiatement après travaux.' },
-      { title: 'Désinfection, désinsectisation, dératisation', description: 'Éliminez durablement microbes et nuisibles pour un environnement sain.' },
+      {
+        title: 'Nettoyage en profondeur',
+        description: 'Traitement complet pour éliminer saleté et acariens.',
+      },
+      {
+        title: 'Détachage',
+        description: 'Élimination des taches difficiles sur tissus et cuir.',
+      },
+      {
+        title: 'Désinfection & désodorisation',
+        description: 'Assainissement et neutralisation des mauvaises odeurs.',
+      },
+      {
+        title: 'Tissus et cuir',
+        description: 'Techniques adaptées à chaque type de revêtement.',
+      },
+    ],
+  },
+  {
+    icon: Layers,
+    number: '07',
+    title: 'Entretien de parquets',
+    tagline: 'Ravivage, protection et entretien préventif du bois',
+    color: '#785A8F',
+    sections: [
+      {
+        title: 'Nettoyage spécialisé',
+        description: 'Entretien adapté aux sols en bois et parquets.',
+      },
+      {
+        title: 'Ravivage',
+        description: 'Redonnez éclat et profondeur à vos parquets fatigués.',
+      },
+      {
+        title: 'Protection du bois',
+        description: 'Traitement protecteur pour prolonger la durée de vie du parquet.',
+      },
+      {
+        title: 'Traitement nourrissant',
+        description: 'Nourriture du bois pour un aspect sain et durable.',
+      },
+      {
+        title: 'Entretien préventif',
+        description: 'Maintenance régulière pour éviter l\'usure prématurée.',
+      },
+    ],
+  },
+  {
+    icon: Snowflake,
+    number: '08',
+    title: 'Nettoyage & désinfection de chambres froides',
+    tagline: 'Sécurité alimentaire et respect des normes HACCP',
+    color: '#3F275F',
+    sections: [
+      {
+        title: 'Dégraissage',
+        description: 'Élimination des résidus et dépôts dans les chambres froides.',
+      },
+      {
+        title: 'Désinfection alimentaire',
+        description: 'Traitement antiseptique conforme aux normes alimentaires.',
+        why: 'Élimination des bactéries pour une conservation optimale.',
+      },
+      {
+        title: 'Nettoyage des évaporateurs',
+        description: 'Entretien des équipements frigorifiques internes.',
+      },
+      {
+        title: 'Respect des normes HACCP',
+        description: 'Intervention alignée sur les exigences sanitaires en vigueur.',
+        why: 'Conformité et sécurité de la chaîne du froid garanties.',
+      },
+    ],
+  },
+  {
+    icon: Home,
+    number: '09',
+    title: 'Nettoyage appartements',
+    tagline: 'Service de proximité & interventions rapides',
+    color: '#52337C',
+    sections: [
+      {
+        title: 'Nettoyage d\'appartements',
+        description: 'Entretien complet de votre logement, pièce par pièce.',
+      },
+      {
+        title: 'Grand ménage',
+        description: 'Nettoyage en profondeur pour un intérieur impeccable.',
+      },
+      {
+        title: 'Après déménagement',
+        description: 'Remise à neuf après le départ ou à l\'arrivée dans un logement.',
+      },
+      {
+        title: 'Avant aménagement',
+        description: 'Préparation soignée avant d\'emménager.',
+      },
+      {
+        title: 'Nettoyage après chantier',
+        description: 'Élimination des poussières et résidus de travaux.',
+      },
+      {
+        title: 'Remise en état & urgence',
+        description: 'Intervention rapide pour une remise en état efficace.',
+        why: 'Service de proximité, réactif et adapté à vos délais.',
+      },
     ],
   },
 ];
 
 export const promoSlides = [
   { title: 'Spécialiste du nettoyage des hottes de cuisine', subtitle: 'Protection incendie & conformité sanitaire', color: '#52337C' },
-  { title: 'Spécialiste du grand ménage des cuisines', subtitle: 'Restaurants, appartements et immeubles', color: '#EB8E8C' },
-  { title: 'Chambres froides & équipements frigorifiques', subtitle: 'Sécurité alimentaire garantie', color: '#785A8F' },
+  { title: 'Grand ménage de cuisine — Hôtels & Restaurants', subtitle: 'Désinfection professionnelle et dégraissage intensif', color: '#EB8E8C' },
+  { title: 'Chambres froides & normes HACCP', subtitle: 'Sécurité alimentaire garantie', color: '#785A8F' },
   { title: 'Espace partenaire sécurisé', subtitle: 'Devis, factures, certificats en ligne', color: '#3F275F' },
 ];

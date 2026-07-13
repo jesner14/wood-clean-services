@@ -14,13 +14,18 @@ interface PageHeroProps {
 
 export function PageHero({ bg, label, title, subtitle, breadcrumbs, overlay }: PageHeroProps) {
   return (
-    <section style={{
-      position: 'relative',
-      height: '380px',
-      overflow: 'hidden',
-      display: 'flex',
-      alignItems: 'center',
-    }}>
+    <section
+      className="page-hero"
+      style={{
+        position: 'relative',
+        minHeight: 'clamp(280px, 38vw, 380px)',
+        height: 'auto',
+        overflow: 'hidden',
+        display: 'flex',
+        alignItems: 'center',
+        paddingBottom: '28px',
+      }}
+    >
       {/* Background */}
       <img src={bg} alt="" style={{
         position: 'absolute', inset: 0, width: '100%', height: '100%',
@@ -38,14 +43,22 @@ export function PageHero({ bg, label, title, subtitle, breadcrumbs, overlay }: P
       {/* Decorative circles */}
       <div style={{
         position: 'absolute', top: '-60px', right: '-60px',
-        width: '300px', height: '300px', borderRadius: '50%',
+        width: 'min(300px, 40vw)', height: 'min(300px, 40vw)', borderRadius: '50%',
         background: 'rgba(229,123,127,0.15)', filter: 'blur(60px)', pointerEvents: 'none'
       }} />
 
       {/* Content */}
-      <div style={{ position: 'relative', zIndex: 1, maxWidth: '1280px', margin: '0 auto', padding: '80px 32px 0', width: '100%' }}>
+      <div style={{
+        position: 'relative',
+        zIndex: 1,
+        maxWidth: 'var(--content-max, 1280px)',
+        margin: '0 auto',
+        padding: '96px var(--page-pad, 32px) 0',
+        width: '100%',
+        boxSizing: 'border-box',
+      }}>
         {/* Breadcrumb */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px', flexWrap: 'wrap' }}>
           {breadcrumbs.map((c, i) => (
             <span key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               {i > 0 && <ChevronRight size={14} color="rgba(255,255,255,0.5)" />}
@@ -67,13 +80,13 @@ export function PageHero({ bg, label, title, subtitle, breadcrumbs, overlay }: P
         }}>{label}</div>
 
         <h1 style={{
-          fontSize: 'clamp(28px, 4vw, 50px)', fontWeight: 900, color: '#fff',
+          fontSize: 'clamp(26px, 4vw, 50px)', fontWeight: 900, color: '#fff',
           margin: '0 0 10px', lineHeight: 1.1, letterSpacing: '-1px',
           textShadow: '0 2px 16px rgba(0,0,0,0.3)'
         }}>{title}</h1>
 
         {subtitle && (
-          <p style={{ fontSize: '16px', color: '#D4CCD9', margin: 0, fontWeight: 500 }}>{subtitle}</p>
+          <p style={{ fontSize: 'clamp(14px, 2vw, 16px)', color: '#D4CCD9', margin: 0, fontWeight: 500, maxWidth: '720px' }}>{subtitle}</p>
         )}
       </div>
     </section>

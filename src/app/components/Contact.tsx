@@ -1,9 +1,16 @@
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { CONTACT } from '../data/contact';
 
 const contactInfo = [
-  { icon: Phone, title: 'Téléphone', detail: '+221 XX XXX XX XX', link: 'tel:+221XXXXXXXXX', color: '#52337C' },
-  { icon: Mail, title: 'Email', detail: 'contact@woodclean.sn', link: 'mailto:contact@woodclean.sn', color: '#EB8E8C' },
-  { icon: MapPin, title: 'Adresse', detail: 'Plateau, Dakar, Sénégal', link: '#', color: '#785A8F' },
+  {
+    icon: Phone,
+    title: 'Téléphone',
+    detail: CONTACT.phones.map((p) => p.display).join('\n'),
+    link: CONTACT.phones[0].href,
+    color: '#52337C',
+  },
+  { icon: Mail, title: 'Email', detail: CONTACT.email, link: CONTACT.emailHref, color: '#EB8E8C' },
+  { icon: MapPin, title: 'Adresse', detail: CONTACT.locationLine, link: '#', color: '#785A8F' },
   { icon: Clock, title: 'Horaires', detail: 'Lun-Sam: 8h-18h | Urgences 24/7', link: '#', color: '#10b981' },
 ];
 
@@ -37,7 +44,7 @@ export function Contact() {
                 </div>
                 <div>
                   <div style={{ fontSize: '12px', fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '4px' }}>{info.title}</div>
-                  <div style={{ fontSize: '14px', fontWeight: 600, color: '#0f172a' }}>{info.detail}</div>
+                  <div style={{ fontSize: '14px', fontWeight: 600, color: '#0f172a', whiteSpace: 'pre-line' }}>{info.detail}</div>
                 </div>
               </a>
             );
@@ -76,7 +83,7 @@ export function Contact() {
               </div>
               <div>
                 <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#475569', marginBottom: '6px' }}>Téléphone</label>
-                <input type="tel" placeholder="+221 XX XXX XX XX" style={{
+                <input type="tel" placeholder="+221 77 583 71 31" style={{
                   width: '100%', padding: '11px 14px', borderRadius: '10px',
                   border: '1px solid #e2e8f0', fontSize: '14px', color: '#0f172a',
                   outline: 'none', transition: 'border 0.2s', background: '#fff',

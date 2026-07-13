@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
 import { PageHero } from '../components/PageHero';
 import { useScrollToHash } from '../hooks/useScrollToHash';
 import { submitQuoteRequest } from '../../lib/quoteRequests';
+import { CONTACT } from '../data/contact';
 
 const SERVICES = [
   'Nettoyage cuisine professionnelle',
@@ -14,9 +15,9 @@ const SERVICES = [
 ];
 
 const info = [
-  { icon: Phone, title: 'Téléphone', detail: '+221 XX XXX XX XX', link: 'tel:+221XXXXXXXXX', color: '#52337C' },
-  { icon: Mail, title: 'Email', detail: 'contact@woodclean.sn', link: 'mailto:contact@woodclean.sn', color: '#EB8E8C' },
-  { icon: MapPin, title: 'Adresse', detail: 'Plateau, Dakar, Sénégal', link: '#', color: '#785A8F' },
+  { icon: Phone, title: 'Téléphone', detail: CONTACT.phones.map((p) => p.display).join('\n'), link: CONTACT.phones[0].href, color: '#52337C' },
+  { icon: Mail, title: 'Email', detail: CONTACT.email, link: CONTACT.emailHref, color: '#EB8E8C' },
+  { icon: MapPin, title: 'Adresse', detail: CONTACT.locationLine, link: '#', color: '#785A8F' },
   { icon: Clock, title: 'Horaires', detail: 'Lun–Sam : 8h–18h\nUrgences 24/7', link: '#', color: '#3F275F' },
 ];
 
@@ -224,7 +225,7 @@ export function ContactPage() {
                     <input
                       required
                       type="tel"
-                      placeholder="+221 XX XXX XX XX"
+                      placeholder="+221 77 583 71 31"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       style={inputStyle}

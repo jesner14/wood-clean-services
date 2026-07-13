@@ -25,6 +25,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [devisNudge, setDevisNudge] = useState(false);
   const { pathname } = useLocation();
 
   const isAppArea =
@@ -33,16 +34,34 @@ export function Header() {
   const isEtablissement = pathname.startsWith('/etablissements');
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    const getScrollY = () =>
+      window.scrollY ||
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
+
+    const onScroll = () => setScrolled(getScrollY() > 40);
+    onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
-    setScrolled(window.scrollY > 60);
-    return () => window.removeEventListener('scroll', onScroll);
+    document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      document.removeEventListener('scroll', onScroll, true);
+    };
   }, [pathname]);
 
   useEffect(() => {
     setOpen(false);
     setDropdownOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setDevisNudge((v) => !v);
+    }, 2000);
+    return () => window.clearInterval(id);
+  }, []);
 
   const navColor = transparent ? 'rgba(255,255,255,0.88)' : '#475569';
   const activeColor = transparent ? '#fff' : P;
@@ -60,14 +79,16 @@ export function Header() {
 
   return (
     <header
+      className={transparent ? 'site-header is-top' : 'site-header is-scrolled'}
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
         zIndex: 100,
-        background: transparent ? 'transparent' : 'rgba(255,255,255,0.97)',
+        background: transparent ? 'transparent' : '#ffffff',
         backdropFilter: transparent ? 'none' : 'blur(14px)',
+        WebkitBackdropFilter: transparent ? 'none' : 'blur(14px)',
         borderBottom: transparent ? '1px solid rgba(255,255,255,0.12)' : '1px solid #e2e8f0',
         boxShadow: transparent ? 'none' : '0 1px 16px rgba(82,51,124,0.08)',
         transition: 'background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease',
@@ -75,13 +96,15 @@ export function Header() {
     >
       <nav
         style={{
-          maxWidth: '1320px',
+          maxWidth: 'var(--header-max, 1280px)',
           margin: '0 auto',
-          padding: '0 32px',
+          padding: '0 var(--page-pad, 32px)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           height: '96px',
+          width: '100%',
+          boxSizing: 'border-box',
         }}
       >
         <BrandLogo variant={transparent ? 'accent' : 'default'} height={60} />
@@ -150,49 +173,55 @@ export function Header() {
                   top: '100%',
                   left: '50%',
                   transform: 'translateX(-50%)',
-                  marginTop: '8px',
-                  background: '#fff',
-                  borderRadius: '12px',
-                  boxShadow: '0 12px 40px rgba(82,51,124,0.18)',
-                  border: '1px solid #e2e8f0',
+                  paddingTop: '12px',
                   minWidth: '240px',
-                  overflow: 'hidden',
                   zIndex: 200,
                 }}
               >
-                {etablissementsLinks.map((link) => (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    style={{
-                      display: 'block',
-                      padding: '14px 20px',
-                      fontSize: '15px',
-                      fontWeight: 500,
-                      color: '#475569',
-                      textDecoration: 'none',
-                      transition: 'background 0.15s, color 0.15s',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.background = '#F4F1F6';
-                      e.currentTarget.style.color = P;
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'transparent';
-                      e.currentTarget.style.color = '#475569';
-                    }}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+                <div
+                  style={{
+                    background: '#fff',
+                    borderRadius: '12px',
+                    boxShadow: '0 12px 40px rgba(82,51,124,0.18)',
+                    border: '1px solid #e2e8f0',
+                    overflow: 'hidden',
+                  }}
+                >
+                  {etablissementsLinks.map((link) => (
+                    <Link
+                      key={link.to}
+                      to={link.to}
+                      style={{
+                        display: 'block',
+                        padding: '14px 20px',
+                        fontSize: '15px',
+                        fontWeight: 500,
+                        color: '#475569',
+                        textDecoration: 'none',
+                        transition: 'background 0.15s, color 0.15s',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = '#F4F1F6';
+                        e.currentTarget.style.color = P;
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = 'transparent';
+                        e.currentTarget.style.color = '#475569';
+                      }}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
             )}
           </div>
         </div>
 
-        <div className="hdr-desktop" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div className="hdr-desktop hdr-cta" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <Link
             to="/connexion"
+            className="hdr-btn hdr-btn--outline hdr-btn-pulse"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -205,7 +234,7 @@ export function Header() {
               fontSize: '15px',
               borderRadius: '10px',
               textDecoration: 'none',
-              transition: 'all 0.25s ease',
+              transition: 'background 0.25s ease, box-shadow 0.25s ease',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.background = transparent ? 'rgba(255,255,255,0.15)' : '#F4F1F6';
@@ -218,6 +247,7 @@ export function Header() {
           </Link>
           <Link
             to="/contact#devis"
+            className="hdr-btn hdr-btn--solid"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -232,12 +262,14 @@ export function Header() {
               textDecoration: 'none',
               backdropFilter: transparent ? 'blur(8px)' : 'none',
               boxShadow: transparent ? '0 4px 16px rgba(0,0,0,0.15)' : '0 4px 14px rgba(82,51,124,0.35)',
-              transition: 'all 0.35s ease',
+              transition: 'background 0.35s ease, box-shadow 0.35s ease, border 0.35s ease, transform 0.25s ease',
+              minWidth: '198px',
+              justifyContent: 'center',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.background = PD;
               e.currentTarget.style.border = '1.5px solid transparent';
-              e.currentTarget.style.transform = 'translateY(-1px)';
+              e.currentTarget.style.transform = 'translateY(-2px) scale(1.03)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = transparent ? 'rgba(255,255,255,0.15)' : P;
@@ -245,7 +277,10 @@ export function Header() {
               e.currentTarget.style.transform = 'none';
             }}
           >
-            <FileText size={16} /> Obtenir un devis
+            <FileText size={16} />
+            <span key={devisNudge ? 'hint' : 'label'} className="hdr-devis-text">
+              {devisNudge ? 'Cliquez ici !' : 'Obtenir un devis'}
+            </span>
           </Link>
         </div>
 
@@ -347,6 +382,62 @@ export function Header() {
         @media (max-width: 1100px) {
           .hdr-desktop { display: none !important; }
           .hdr-mobile { display: flex !important; }
+        }
+
+        @media (max-width: 640px) {
+          header nav {
+            height: 72px !important;
+          }
+        }
+
+        .hdr-btn-pulse {
+          animation: hdrClickMePulse 2.4s ease-in-out infinite;
+        }
+
+        .hdr-btn:hover {
+          animation-play-state: paused;
+        }
+
+        .hdr-devis-text {
+          display: inline-block;
+          animation: hdrTextPop 0.45s ease both;
+        }
+
+        @keyframes hdrClickMePulse {
+          0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(82, 51, 124, 0);
+          }
+          40% {
+            transform: scale(1.05);
+            box-shadow: 0 0 0 6px rgba(82, 51, 124, 0.12);
+          }
+          55% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(82, 51, 124, 0);
+          }
+          70% {
+            transform: scale(1.04);
+            box-shadow: 0 0 0 4px rgba(235, 142, 140, 0.18);
+          }
+        }
+
+        @keyframes hdrTextPop {
+          0% {
+            opacity: 0;
+            transform: translateY(6px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .hdr-btn-pulse,
+          .hdr-devis-text {
+            animation: none !important;
+          }
         }
       `}</style>
     </header>

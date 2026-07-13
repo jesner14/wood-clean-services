@@ -1,27 +1,18 @@
 import { Link } from 'react-router';
 import {
   ArrowRight,
-  Utensils,
-  Building2,
-  Home,
-  Wrench,
-  Wind,
-  Users,
   Clock,
   Shield,
   Leaf,
   CheckCircle,
-  type LucideIcon,
 } from 'lucide-react';
+import { servicesContent } from '../data/servicesContent';
 
-const heroServices: { icon: LucideIcon; title: string; to: string }[] = [
-  { icon: Utensils, title: 'Nettoyage des hottes de cuisine', to: '/services#service-01' },
-  { icon: Building2, title: 'Grand ménage restaurants & hôtels', to: '/services#service-02' },
-  { icon: Home, title: 'Nettoyage particuliers & immeubles', to: '/services#service-03' },
-  { icon: Wrench, title: 'Conception & maintenance', to: '/services#service-04' },
-  { icon: Wind, title: 'Chambres froides & équipements', to: '/services#service-05' },
-  { icon: Users, title: 'Services complémentaires', to: '/services#service-06' },
-];
+const heroServices = servicesContent.map((s) => ({
+  icon: s.icon,
+  title: s.title,
+  to: `/services#service-${s.number}`,
+}));
 
 const features = [
   { icon: Clock, label: 'Intervention rapide' },
@@ -34,7 +25,7 @@ export function HeroHome() {
   return (
     <section className="hero-home">
       <div className="hero-home__bg" aria-hidden>
-        <img src="/assets/hero1.png" alt="" />
+        <img src="/assets/hero4.png" alt="" />
       </div>
       <div className="hero-home__overlay" aria-hidden />
 
@@ -84,7 +75,7 @@ export function HeroHome() {
                   style={{ animationDelay: `${0.4 + i * 0.08}s` }}
                 >
                   <span className="hero-home__service-icon">
-                    <Icon size={22} />
+                    <Icon size={18} />
                   </span>
                   <span className="hero-home__service-title">{s.title}</span>
                 </Link>
@@ -96,16 +87,18 @@ export function HeroHome() {
 
       {/* Barre avantages */}
       <div className="hero-home__features">
-        {features.map(({ icon: Icon, label }, i) => (
-          <div
-            key={label}
-            className="hero-home__feature hero-fade-in"
-            style={{ animationDelay: `${0.7 + i * 0.1}s` }}
-          >
-            <Icon size={20} />
-            <span>{label}</span>
-          </div>
-        ))}
+        <div className="hero-home__features-inner">
+          {features.map(({ icon: Icon, label }, i) => (
+            <div
+              key={label}
+              className="hero-home__feature hero-fade-in"
+              style={{ animationDelay: `${0.7 + i * 0.1}s` }}
+            >
+              <Icon size={20} />
+              <span>{label}</span>
+            </div>
+          ))}
+        </div>
       </div>
 
       <style>{`
@@ -129,11 +122,12 @@ export function HeroHome() {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          object-position: 58% center;
           animation: heroBgZoom 20s ease-in-out infinite alternate;
         }
         @keyframes heroBgZoom {
           from { transform: scale(1); }
-          to { transform: scale(1.06); }
+          to { transform: scale(1.04); }
         }
 
         .hero-home__overlay {
@@ -142,10 +136,10 @@ export function HeroHome() {
           z-index: 1;
           background: linear-gradient(
             105deg,
-            rgba(15, 8, 30, 0.92) 0%,
-            rgba(26, 15, 46, 0.85) 38%,
-            rgba(26, 15, 46, 0.55) 62%,
-            rgba(26, 15, 46, 0.75) 100%
+            rgba(30, 22, 48, 0.62) 0%,
+            rgba(26, 15, 46, 0.58) 32%,
+            rgba(26, 15, 46, 0.48) 55%,
+            rgba(26, 15, 46, 0.72) 100%
           );
         }
 
@@ -153,12 +147,12 @@ export function HeroHome() {
           position: relative;
           z-index: 2;
           flex: 1;
-          max-width: 1400px;
+          max-width: var(--hero-max, 1400px);
           margin: 0 auto;
-          padding: 32px 32px 24px;
+          padding: 32px var(--page-pad, 32px) 24px;
           width: 100%;
           display: grid;
-          grid-template-columns: 1fr auto 1fr;
+          grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
           gap: 16px 24px;
           align-items: start;
           box-sizing: border-box;
@@ -178,6 +172,7 @@ export function HeroHome() {
           text-transform: uppercase;
           color: #EB8E8C;
           margin: 0 0 16px;
+          text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
         }
 
         .hero-home__title {
@@ -188,14 +183,16 @@ export function HeroHome() {
           margin: 0 0 16px;
           letter-spacing: -0.5px;
           text-transform: uppercase;
+          text-shadow: 0 2px 18px rgba(0, 0, 0, 0.4);
         }
 
         .hero-home__subtitle {
           font-size: clamp(14px, 1.5vw, 17px);
-          color: rgba(255, 255, 255, 0.82);
+          color: rgba(255, 255, 255, 0.9);
           line-height: 1.7;
           margin: 0 0 28px;
           max-width: 420px;
+          text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
         }
 
         .hero-home__ctas {
@@ -242,6 +239,7 @@ export function HeroHome() {
           align-self: start;
           z-index: 3;
           margin-top: 0;
+          transform: translateX(-36px);
         }
 
         .hero-home__worker-wrap {
@@ -255,7 +253,7 @@ export function HeroHome() {
         }
 
         .hero-home__worker {
-          max-height: min(680px, 72vh);
+          max-height: min(560px, 62vh);
           width: auto;
           max-width: 100%;
           object-fit: contain;
@@ -277,16 +275,16 @@ export function HeroHome() {
         .hero-home__services-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 14px;
-          max-width: 420px;
+          gap: 10px;
+          max-width: 440px;
           width: 100%;
         }
 
         .hero-home__service-card {
           display: flex;
           align-items: center;
-          gap: 14px;
-          padding: 16px 18px;
+          gap: 12px;
+          padding: 12px 14px;
           background: rgba(82,51,124, 0.35);
           border: 1px solid rgba(220, 186, 221, 0.35);
           border-radius: 12px;
@@ -302,8 +300,8 @@ export function HeroHome() {
 
         .hero-home__service-icon {
           flex-shrink: 0;
-          width: 40px;
-          height: 40px;
+          width: 36px;
+          height: 36px;
           border-radius: 10px;
           background: rgba(255, 255, 255, 0.12);
           display: flex;
@@ -313,22 +311,29 @@ export function HeroHome() {
         }
 
         .hero-home__service-title {
-          font-size: 13px;
+          font-size: 12px;
           font-weight: 600;
           color: #fff;
-          line-height: 1.4;
+          line-height: 1.35;
         }
 
         .hero-home__features {
           position: relative;
           z-index: 2;
+          background: rgba(26, 15, 46, 0.95);
+          border-top: 1px solid rgba(220, 186, 221, 0.15);
+          width: 100%;
+        }
+
+        .hero-home__features-inner {
+          max-width: var(--hero-max, 1400px);
+          margin: 0 auto;
+          padding: 20px var(--page-pad, 32px);
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           gap: 16px;
-          background: rgba(26, 15, 46, 0.95);
-          border-top: 1px solid rgba(220, 186, 221, 0.15);
-          padding: 20px 32px;
-          max-width: 100%;
+          width: 100%;
+          box-sizing: border-box;
         }
 
         .hero-home__feature {
@@ -375,6 +380,43 @@ export function HeroHome() {
           }
         }
 
+        /* Desktop large : garde les proportions sans étirer */
+        @media (min-width: 1440px) {
+          .hero-home__worker {
+            max-height: min(600px, 64vh);
+          }
+        }
+
+        @media (min-width: 1920px) {
+          .hero-home__bg img {
+            object-position: 52% center;
+          }
+          .hero-home__center {
+            transform: translateX(-28px);
+          }
+          .hero-home__worker {
+            max-height: min(640px, 66vh);
+          }
+        }
+
+        @media (max-width: 1200px) and (min-width: 1101px) {
+          .hero-home__inner {
+            gap: 12px 16px;
+          }
+          .hero-home__left {
+            max-width: 400px;
+          }
+          .hero-home__services-grid {
+            max-width: 380px;
+          }
+          .hero-home__worker {
+            max-height: min(480px, 55vh);
+          }
+          .hero-home__center {
+            transform: translateX(-20px);
+          }
+        }
+
         @media (max-width: 1100px) {
           .hero-home__inner {
             grid-template-columns: 1fr;
@@ -395,6 +437,7 @@ export function HeroHome() {
           .hero-home__center {
             order: 2;
             align-self: center;
+            transform: none;
           }
           .hero-home__right {
             justify-content: center;
@@ -404,6 +447,10 @@ export function HeroHome() {
           }
           .hero-home__services-grid {
             max-width: 480px;
+            margin: 0 auto;
+          }
+          .hero-home__worker {
+            max-height: min(420px, 50vh);
           }
         }
 
@@ -411,16 +458,23 @@ export function HeroHome() {
           .hero-home__services-grid {
             grid-template-columns: 1fr;
           }
-          .hero-home__features {
+          .hero-home__features-inner {
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
-            padding: 16px 20px;
+            padding: 16px var(--page-pad, 16px);
           }
           .hero-home__feature {
             font-size: 12px;
           }
           .hero-home {
             min-height: auto;
+            padding-top: 80px;
+          }
+          .hero-home__title {
+            font-size: clamp(22px, 6.5vw, 32px);
+          }
+          .hero-home__worker {
+            max-height: min(340px, 46vh);
           }
         }
       `}</style>

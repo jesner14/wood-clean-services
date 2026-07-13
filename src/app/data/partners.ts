@@ -1,11 +1,14 @@
-/** Logos partenaires — déposer les fichiers dans public/assets/partners/ */
+/** Logos partenaires — fichiers dans public/assets/partners/ */
 export const partners = [
-  { name: 'Lamantin Beach', logo: '/assets/partners/lamantin.png', fallback: 'LAMANTIN BEACH' },
-  { name: 'King Fahd Palace', logo: '/assets/partners/king-fahd.png', fallback: 'KING FAHD PALACE' },
-  { name: 'Noom Hotel', logo: '/assets/partners/noom.png', fallback: 'NOOM HOTEL' },
-  { name: 'Pullman Dakar', logo: '/assets/partners/pullman.png', fallback: 'PULLMAN DAKAR' },
-  { name: 'Radisson Blu', logo: '/assets/partners/radisson.png', fallback: 'RADISSON BLU' },
-  { name: 'Terrou-Bi', logo: '/assets/partners/terrou-bi.png', fallback: 'TERROU-BI' },
-  { name: 'Sofitel', logo: '/assets/partners/sofitel.png', fallback: 'SOFITEL' },
-  { name: 'Azalaï', logo: '/assets/partners/azalai.png', fallback: 'AZALAÏ' },
+  { name: 'Noom Hotel Dakar Sea Plaza', logo: '/assets/partners/noom.jpg' },
+  { name: 'Bahia Beach Club', logo: '/assets/partners/bahia-beach.jpg' },
+  { name: 'Simpa', logo: '/assets/partners/simpa.png' },
+  { name: 'Lagardère Travel Retail', logo: '/assets/partners/lagardere.png' },
+  { name: 'Le Djoloff Boutique Hotel', logo: '/assets/partners/djoloff.png' },
+  { name: 'Beluga', logo: '/assets/partners/beluga.png' },
+  { name: 'La Parrilla', logo: '/assets/partners/la-parrilla.png' },
+  { name: 'Churrascaria Brasil', logo: '/assets/partners/churrascaria-brasil.png' },
+  { name: 'Chicken Nekh', logo: '/assets/partners/chicken-nekh.png' },
+  { name: 'Partner TP', logo: '/assets/partners/tp.png' },
+  { name: 'Partner S', logo: '/assets/partners/partner-s.png' },
 ];
